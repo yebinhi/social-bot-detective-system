@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { Button } from "@/components/ui/button";
-import { LogOut, User } from "lucide-react";
+import { LogOut, User, CreditCard } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const { user, isAuthenticated, logout } = useAuth();
@@ -22,6 +22,11 @@ const Navbar: React.FC = () => {
           <div className="flex items-center">
             {isAuthenticated ? (
               <div className="flex items-center space-x-4">
+                <Button variant="outline" size="sm" asChild>
+                  <Link to="/subscription">
+                    <CreditCard className="h-4 w-4 mr-1" /> Subscribe
+                  </Link>
+                </Button>
                 <span className="text-sm flex items-center">
                   <User className="h-4 w-4 mr-1" /> {user?.email}
                 </span>

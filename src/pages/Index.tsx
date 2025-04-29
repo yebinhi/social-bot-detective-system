@@ -21,9 +21,14 @@ const Index = () => {
           </p>
           <div className="mt-10">
             {isAuthenticated ? (
-              <Button size="lg" asChild>
-                <Link to="/dashboard">Go to Dashboard</Link>
-              </Button>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button size="lg" asChild>
+                  <Link to="/dashboard">Go to Dashboard</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/subscription">Subscribe</Link>
+                </Button>
+              </div>
             ) : (
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" asChild>
